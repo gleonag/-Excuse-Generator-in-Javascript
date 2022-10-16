@@ -17,6 +17,20 @@ window.onload = function() {
     "during my lunch",
     "while I was praying"
   ];
-  document.getElementById("excuse");
-  document.console.log("Hello Rigo from the console!");
+  let excuse =
+    getExcuse(who) +
+    " " +
+    getExcuse(action) +
+    " " +
+    getExcuse(what) +
+    " " +
+    getExcuse(when);
+  document.querySelector("#excuse").innerHTML = excuse;
 };
+function getExcuse(array) {
+  let position = getRandomInt(array.length);
+  return array[position];
+}
+function getRandomInt(max) {
+  return Math.floor(Math.random() * max);
+}
